@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": 1
+  },
+  "globals": {
+    "$": 1
+  },
+  "rules": {
+    "quotes": [1, "single"],
+    "eol-last": 1,
+    "prefer-template": 1,
+    "comma-dangle": 1
+  }
+}
