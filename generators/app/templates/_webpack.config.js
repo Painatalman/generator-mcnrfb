@@ -13,7 +13,6 @@ module.exports = {
   configFile: './.eslintrc',
   devtool: 'source-map',
   plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin()
   ],
   module: {
@@ -22,7 +21,7 @@ module.exports = {
         test: /.jsx?$/,
         loader: 'babel-loader',
         include: [
-          path.resolve(__dirname, 'scripts')
+          path.resolve(__dirname, 'src')
         ]
       },{
         test: /\.css$/,

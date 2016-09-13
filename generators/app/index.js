@@ -104,18 +104,26 @@ module.exports = yeoman.Base.extend({
     },
     // Copy app files
     app: function() {
-      // Install dependencies
-      this.fs.copy(
+      var context = {
+        name: this.props.name,
+        description: this.props.description,
+        date: this.props.initialDate
+      };
+
+      this.fs.copyTpl(
         this.templatePath('dist'),
-        this.destinationPath('dist')
+        this.destinationPath('dist'),
+        context
       );
-      this.fs.copy(
+      this.fs.copyTpl(
         this.templatePath('src'),
-        this.destinationPath('src')
+        this.destinationPath('src'),
+        context
       );
     }
   },
   install: function() {
+    // Install dependencies
     this.installDependencies();
   }
 });
