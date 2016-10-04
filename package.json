@@ -4,7 +4,8 @@
   "description": "generator from miguel costa for a node-react-frontend-bootstrapping utility",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "register-locally": "npm link",
+    "generate": "yo mcnrfb"
   },
   "keywords": [
     "generator",

@@ -13,9 +13,20 @@ module.exports = {
   configFile: './.eslintrc',
   devtool: 'source-map',
   plugins: [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.NoErrorsPlugin()
   ],
   module: {
+  preloaders: [
+    {
+      test: /\.s(a|c)ss$/,
+      loader: 'stylelint'
+    }
+  ],
     loaders: [
       {
         test: /.jsx?$/,
@@ -25,7 +36,7 @@ module.exports = {
         ]
       },{
         test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader',
+        loader: 'style-loader!css-loader?modules&importLoaders=1!postcss-loader',
         include: path.join(__dirname, 'src')
     }
     ]
