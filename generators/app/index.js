@@ -94,6 +94,14 @@ module.exports = yeoman.Base.extend({
         this.destinationPath('.stylelintrc')
       );
       this.fs.copy(
+        this.templatePath('_flowconfig'),
+        this.destinationPath('.flowconfig')
+      );
+      this.fs.copy(
+        this.templatePath('_postcss.config.js'),
+        this.destinationPath('postcss.config.js')
+      );
+      this.fs.copy(
         this.templatePath('_gitignore'),
         this.destinationPath('.gitignore')
       );

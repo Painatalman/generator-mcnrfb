@@ -1,11 +1,13 @@
 {
   "name": "generator-mcnrfb",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "generator from miguel costa for a node-react-frontend-bootstrapping utility",
   "main": "dist/index.js",
   "scripts": {
+    "preinstall": "echo you are installing...",
     "register-locally": "npm link",
-    "generate": "yo mcnrfb"
+    "generate": "yo mcnrfb",
+    "postinstall": "echo you have just installed this"
   },
   "keywords": [
     "generator",
