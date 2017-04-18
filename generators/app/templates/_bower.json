@@ -1,0 +1,16 @@
+{
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "authors": [
+    "Carlos Batman <maiquedi@gmail.com>"
+  ],
+  "keywords": [
+    "generator",
+    "yeoman",
+    "react",
+    "node",
+    "frontend"
+  ],
+  "license": "MIT",
+  "private": true
+}

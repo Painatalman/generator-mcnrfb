@@ -16,20 +16,13 @@ module.exports = { 
   },
   devtool: 'source-map',
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.NoErrorsPlugin(),
     new WebpackNotifierPlugin()
   ],
-   module: {
-     loaders: [
-      {
+   module: { 
+    loaders: [{
         enforce: "pre",
         test: /\.css$/,
-        loader: 'stylelint',
+        loader: 'stylelint-loader',
         include: [
           path.resolve(__dirname, 'src')
         ]
@@ -37,33 +30,32 @@ module.exports = { 
       {
         enforce: "pre",
         test: /.jsx?$/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
         include: [
           path.resolve(__dirname, 'src')
         ]
       }, {
-      test: /.jsx?$/,
-      loader: 'babel-loader',
-      include: [
-        path.resolve(__dirname, 'src')
-      ]
-    }, {
-      test: /\.css$/,
-      loaders: [
-        'style-loader',
-        'css-loader?modules&importLoaders=1',
-        'postcss-loader'
-      ],
-      include: path.join(__dirname, 'src')
-    }],
-  },
-  postcss: function() {
-    var plugins = require('./postcss.config.js')
-      .plugins;
-    return plugins;
-  },
-  eslint: {
-    failOnWarning: false,
-    failOnError: true
+        test: /.jsx?$/,
+        loader: 'babel-loader',
+        include: [
+          path.resolve(__dirname, 'src')
+        ]
+      }, {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader?modules&importLoaders=1',
+          'postcss-loader'
+        ],
+        include: path.join(__dirname, 'src')
+      },
+
+      {
+        test: /\.json$/,
+        loader: "json",
+        include: path.join(__dirname, 'data.json')
+      }
+
+    ]
   }
 };

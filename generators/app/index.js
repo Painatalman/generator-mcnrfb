@@ -72,9 +72,19 @@ module.exports = yeoman.Base.extend({
         context
       );
       this.fs.copyTpl(
+        this.templatePath('_bower.json'),
+        this.destinationPath('bower.json'),
+        context
+      );
+      this.fs.copyTpl(
         this.templatePath('_README.md'),
         this.destinationPath('README.md'),
         context
+      );
+      
+      this.fs.copyTpl(
+        this.templatePath('_LICENSE'),
+        this.destinationPath('LICENSE')
       );
 
       this.fs.copy(
@@ -130,6 +140,21 @@ module.exports = yeoman.Base.extend({
       this.fs.copyTpl(
         this.templatePath('src'),
         this.destinationPath('src'),
+        context
+      );
+      this.fs.copyTpl(
+        this.templatePath('__tests__'),
+        this.destinationPath('__tests__'),
+        context
+      );
+      this.fs.copyTpl(
+        this.templatePath('stories'),
+        this.destinationPath('stories'),
+        context
+      );
+      this.fs.copyTpl(
+        this.templatePath('.storybook'),
+        this.destinationPath('.storybook'),
         context
       );
     }

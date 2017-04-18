@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => (
   <header>
     <nav>
       <ul>
         <li>
-          <Link to="/" activeClassName="active">Home</Link>
+          <Link to="/" >Home</Link>
         </li>
         <li>
-          <Link to="/about" activeClassName="active">About</Link>
+          <Link to="/about" >About</Link>
         </li>
       </ul>
     </nav>

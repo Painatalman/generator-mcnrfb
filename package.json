@@ -1,6 +1,6 @@
 {
   "name": "generator-mcnrfb",
-  "version": "0.3.0",
+  "version": "2.0.0",
   "description": "generator from miguel costa for a node-react-frontend-bootstrapping utility",
   "main": "dist/index.js",
   "scripts": {
