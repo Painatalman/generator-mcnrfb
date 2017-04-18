@@ -6,6 +6,7 @@
   "scripts": {
     "preinstall": "echo you are installing...",
     "register-locally": "npm link",
+    "publish": "npm publish",
     "generate": "yo mcnrfb",
     "postinstall": "echo you have just installed this"
   },
